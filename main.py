@@ -1,13 +1,13 @@
-import numpy as np
 import os
 import cv2
 import random
-from matplotlib import pyplot as plt
-import pandas as pd
 import logging
+import datetime
+import numpy as np
+import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
-import datetime
+from matplotlib import pyplot as plt
 
 DATASET_FOLDER = r'C:/Users/chiki/Downloads/notMNIST_large'
 CLASSES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
@@ -16,7 +16,7 @@ LABELS_COLUMN_NAME = 'labels'
 HASHED_DATA_COLUMN_NAME = 'data_bytes'
 BALANCE_BORDER = 0.85
 MAX_ITERATIONS_COUNT = 1000000
-TRAIN_SIZES = [50, 100, 1000, 10000, 50000, 200000]
+TRAIN_SIZES = [50, 100, 1000, 10000, 50000]
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 

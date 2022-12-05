@@ -14,7 +14,6 @@ scikit-image = "^0.19.3"
 pandas = "^1.5.1"
 tensorflow = "^2.10.0"
 opencv-python = "^4.6.0.66"
-numba = "^0.56.4"
 scikit-learn = "^1.1.3"
 
 

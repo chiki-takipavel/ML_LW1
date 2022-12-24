@@ -15,7 +15,7 @@ DATA_COLUMN_NAME = 'data'
 LABELS_COLUMN_NAME = 'labels'
 HASHED_DATA_COLUMN_NAME = 'data_bytes'
 BALANCE_BORDER = 0.85
-MAX_ITERATIONS_COUNT = 1000000
+MAX_ITERATIONS_COUNT = 200000
 TRAIN_SIZES = [50, 100, 1000, 10000, 50000]
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -141,23 +141,13 @@ def get_logistic_regression(x_train, y_train, x_test, y_test):
 
 
 def show_result_plot(test_scores):
-    test_scores_mean = np.mean(test_scores)
-    test_scores_std = np.std(test_scores)
-
     plt.figure()
     plt.title('Learning curve')
     plt.xlabel('Training data size')
     plt.ylabel('Accuracy')
     plt.grid()
 
-    plt.plot(TRAIN_SIZES, test_scores_mean, 'o-', color='g', label='Testing score')
-    plt.fill_between(
-        TRAIN_SIZES,
-        test_scores_mean - test_scores_std,
-        test_scores_mean + test_scores_std,
-        alpha=0.25,
-        color='g'
-    )
+    plt.plot(TRAIN_SIZES, test_scores, 'o-', color='g', label='Testing score')
 
     plt.show()
     logging.info("Plot shown")

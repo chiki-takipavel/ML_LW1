@@ -15,8 +15,8 @@ DATA_COLUMN_NAME = 'data'
 LABELS_COLUMN_NAME = 'labels'
 HASHED_DATA_COLUMN_NAME = 'data_bytes'
 BALANCE_BORDER = 0.85
-MAX_ITERATIONS_COUNT = 200000
-TRAIN_SIZES = [50, 100, 1000, 10000, 50000, 200000]
+MAX_ITERATIONS_COUNT = 2000
+TRAIN_SIZES = [50, 100, 1000, 20000, 50000, 200000]
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
@@ -134,7 +134,7 @@ def get_logistic_regression(x_train, y_train, x_test, y_test):
         logging.info("Regression fit is completed")
 
         score = logistic_regression.score(x_test, y_test)
-        logging.info("Score is calculated")
+        logging.info(f"Score is calculated. Result: {score}")
         test_scores.append(score)
 
     return test_scores

@@ -9,14 +9,14 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from matplotlib import pyplot as plt
 
-DATASET_FOLDER = r'C:/Users/chiki/Downloads/notMNIST_large'
+DATASET_FOLDER = r'../Dataset'
 CLASSES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
 DATA_COLUMN_NAME = 'data'
 LABELS_COLUMN_NAME = 'labels'
 HASHED_DATA_COLUMN_NAME = 'data_bytes'
 BALANCE_BORDER = 0.85
 MAX_ITERATIONS_COUNT = 200000
-TRAIN_SIZES = [50, 100, 1000, 10000, 50000]
+TRAIN_SIZES = [50, 100, 1000, 10000, 50000, 200000]
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 

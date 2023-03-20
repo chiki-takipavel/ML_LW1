@@ -128,8 +128,8 @@ def split_dataset_into_subsamples(data_frame):
 
 def get_logistic_regression(x_train, y_train, x_test, y_test):
     test_scores = list()
+    logistic_regression = LogisticRegression(max_iter=MAX_ITERATIONS_COUNT)
     for train_size in TRAIN_SIZES:
-        logistic_regression = LogisticRegression(max_iter=MAX_ITERATIONS_COUNT)
         logistic_regression.fit(x_train[:train_size], y_train[:train_size])
         logging.info("Regression fit is completed")
 
@@ -147,7 +147,9 @@ def show_result_plot(test_scores):
     plt.ylabel('Accuracy')
     plt.grid()
 
-    plt.plot(TRAIN_SIZES, test_scores, 'o-', color='g', label='Testing score')
+    ticks = range(len(TRAIN_SIZES))
+    plt.xticks(ticks, TRAIN_SIZES)
+    plt.plot(ticks, test_scores, 'o-', color='g', label='Testing score')
 
     plt.show()
     logging.info("Plot shown")
